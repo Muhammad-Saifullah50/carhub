@@ -5,13 +5,15 @@ import Image from "next/image"
 import { CarProps } from "@/types"
 import { CustomButton } from ".."
 import { calculateCarRent } from "@/utils"
+import { CarDetails } from ".."
 
 
 interface CarCardProps {
     car: CarProps
 }
 const CarCard = ({ car }: CarCardProps) => {
-
+    const [isOpen, setIsOpen] = useState(false)
+    // open or closing of modal
     const { city_mpg, year, drive, make, model, transmission } = car
     // this will allow us to use 'year' instead of car.year
 
@@ -61,10 +63,17 @@ const CarCard = ({ car }: CarCardProps) => {
                         </p>
                     </div>
                 </div>
-                <div>
-{/* button */}
+                <div className="car-card__btn-container">
+                    <CustomButton
+                        title="View More.."
+                        containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
+                        textStyles="text-white text-[14px] leading-[17px] font-bold"
+                        rightIcon="/right-arrow.svg"
+                        handleClick={() => setIsOpen(true)}
+                    />
                 </div>
             </div>
+            <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car}/>
         </div>
     )
 }
