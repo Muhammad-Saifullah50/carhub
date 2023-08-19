@@ -17,7 +17,7 @@ const Hero = () => {
 
                 <CustomButton
                     title="Explore Cars"
-                    containerStyles='bg-primary-blue text-white rounded-full mt-5'
+                    containerStyles='bg-primary-blue text-white rounded-full mt-5 font-semibold'
                     handleClick={handleScroll}
                 />
             </div>
