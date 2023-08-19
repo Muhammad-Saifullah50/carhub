@@ -1,6 +1,7 @@
 "use client"
 import { CustomButton } from '@/components/index'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Hero = () => {
 
@@ -14,12 +15,14 @@ const Hero = () => {
                 <p className='hero__subtitle'>
                     Streamline your car rental experience with our effortless booking process.
                 </p>
+                <a href="#discover">
+                    <CustomButton
+                        title="Explore Cars"
+                        containerStyles='bg-primary-blue text-white rounded-full mt-5 font-semibold'
+                        handleClick={handleScroll}
+                    />
+                </a>
 
-                <CustomButton
-                    title="Explore Cars"
-                    containerStyles='bg-primary-blue text-white rounded-full mt-5 font-semibold'
-                    handleClick={handleScroll}
-                />
             </div>
             <div className="hero__image-container">
                 <div className="hero__image">
